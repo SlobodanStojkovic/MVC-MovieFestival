@@ -20,7 +20,7 @@ function createNewMovie() {
     var genre = titleGenre.value;
 
     if (!title || !length || !genre) {
-        errorMovie.textContent = "Please fill out all required fields."
+        errorMovie.textContent = "Please fill out all required fields.";
         return;
     }
 
@@ -31,7 +31,7 @@ function createNewMovie() {
 
     errorMovie.textContent = "";
 
-    var movie = new Movie(title, length, genre)
+    var movie = new Movie(title, length, genre);
     festival.listOfAllMovies.push(movie);
     var movieIndex = festival.listOfAllMovies.length - 1;   //this creates index of a movie when we create a new movie -> Then later we use it to connect and insert movie to Program
 
@@ -60,13 +60,12 @@ function createNewMovie() {
 
 function createNewProgram() {
     var date = new Date(dateInputField.value);
-    console.log(dateInputField.value)
     var day = date.getDate();
     var month = date.getMonth() + 1;
     var year = date.getFullYear();
     var ddmmyyyy = day + "." + month + "." + year + ".";
 
-    var now = new Date;
+    var now = new Date();
     if(dateInputField.value.length === 0 || date < now) {
         errorCreateProgram.textContent = "Please enter valid date in future";
         return;

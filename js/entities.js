@@ -24,7 +24,7 @@ Movie.prototype.constructor = Movie;
 
 Movie.prototype.getData = function () {
     return this.title + ", " + this.length + "min" + ", " + this.genre[0] + this.genre[this.genre.length - 1].toUpperCase();
-}
+};
 
 
 
@@ -39,23 +39,23 @@ Program.prototype.totalMovieDuration = function () {
         result += movie.length;
     });
     return result;
-}
+};
 
 Program.prototype.addMovie = function (movie) {
     this.listOfMovies.push(movie);
-}
+};
 
 Program.prototype.totalNumberOfMovies = function () {
     return this.listOfMovies.length;
-}
+};
 
 Program.prototype.getData = function () {
     var date = new Date(this.date);
     var day = this.date.getDate();
     var month = this.date.getMonth();
     var year = this.date.getFullYear();
-    var ddmmyyyy = day + "." + month + "."+ year + "."
+    var ddmmyyyy = day + "." + month + "."+ year + ".";
     return ddmmyyyy + ", " + this.totalNumberOfMovies() + " movies, duration: " + this.totalMovieDuration() + "min";
-}
+};
 
 
